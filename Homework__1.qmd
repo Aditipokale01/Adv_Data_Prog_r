@@ -1,0 +1,64 @@
+---
+title: "Homework 1"
+author: "Aditi 24205303"
+format: pdf
+execute:
+  echo: false   # Hides R code in final output
+---
+
+# Introduction
+
+The palmerpenguins dataset is a widely used dataset for teaching data visualization in R. It contains observations of penguins from three species—*Adelie*, *Chinstrap*, and *Gentoo*—collected in Antarctica.
+
+This dataset is useful for understanding how physical characteristics such as **body mass**, **flipper length**, and **bill size** vary across species.
+
+# Dataset Description
+
+The key variables we’ll focus on are:
+
+- **species**: Penguin species (*Adelie*, *Chinstrap*, *Gentoo*)
+- **body_mass_g**: Body mass in grams
+- **sex**: Penguin sex (*male* or *female*)
+
+# Summary Statistics
+
+Let’s briefly examine the distribution of body mass across species and sexes:
+
+- Average body mass (g):  
+  - *Adelie*: ~3700 g  
+  - *Chinstrap*: ~3730 g  
+  - *Gentoo*: ~5075 g
+
+These numbers suggest that **Gentoo penguins are generally larger** than the other two species.
+
+# Body Mass by Species and Sex
+
+The bar plot below shows the **average body mass** of male and female penguins across different species.
+
+```{r}
+library(ggplot2)
+library(palmerpenguins)
+
+ggplot(na.omit(penguins), aes(x = species, y = body_mass_g, fill = sex)) +
+  geom_bar(stat = "summary", fun = "mean", position = position_dodge()) +
+  labs(
+    title = "Average Penguin Body Mass by Species and Sex",
+    x = "Penguin Species",
+    y = "Body Mass (grams)",
+    fill = "Sex"
+  ) +
+  scale_fill_manual(values = c("female" = "#FF9999", "male" = "#6699CC")) +
+  theme_minimal()
+```
+
+# Explanation
+
+This plot illustrates differences in body mass across penguin species, split by sex:
+
+- **Male penguins** consistently weigh more than females.
+- **Gentoo penguins** are the heaviest, regardless of sex.
+- **Adelie** and **Chinstrap** penguins are smaller in comparison.
+
+# Interpretation
+
+The visualized data clearly shows that **species** and **sex** are significant factors influencing penguin body mass. These patterns might relate to habitat, diet, or evolutionary traits specific to each species.
