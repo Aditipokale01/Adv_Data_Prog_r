@@ -65,3 +65,5 @@ This plot illustrates differences in body mass across penguin species, split by 
 # Interpretation
 
 The visualized data clearly shows that **species** and **sex** are significant factors influencing penguin body mass. These patterns might relate to habitat, diet, or evolutionary traits specific to each species.
+
+Adelie penguins tend to have shorter flippers compared to Gentoo.
