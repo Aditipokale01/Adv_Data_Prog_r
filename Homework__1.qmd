@@ -12,6 +12,9 @@ The palmerpenguins dataset is a widely used dataset for teaching data visualizat
 
 This dataset is useful for understanding how physical characteristics such as **body mass**, **flipper length**, and **bill size** vary across species.
 
+
+#Note: This dataset focuses on Palmer penguins species and measurements.
+
 # Dataset Description
 
 The key variables we’ll focus on are:
